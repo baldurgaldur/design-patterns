@@ -1,10 +1,22 @@
 package factory_pattern.pizzas;
 
-public class PepperoniPizza extends CheesePizza {
-  public PepperoniPizza() {
-    super();
-    name = "Regular Pepperoni Pizza";
+import factory_pattern.pizza_ingredient_factories.PizzaIngredientFactory;
 
-    toppings.add("pepperoni");
+public class PepperoniPizza extends Pizza{
+  private PizzaIngredientFactory pizzaIngredientFactory;
+
+  public PepperoniPizza(PizzaIngredientFactory pizzaIngredientFactory) {
+    this.pizzaIngredientFactory = pizzaIngredientFactory;
+  }
+
+  public void prepare() {
+    System.out.println("Preparing " + name);
+
+    dough = pizzaIngredientFactory.createDough();
+    sauce = pizzaIngredientFactory.createSauce();
+
+    veggies = pizzaIngredientFactory.createVeggies();
+    cheese = pizzaIngredientFactory.createCheese();
+    pepperoni = pizzaIngredientFactory.createPepperoni();
   }
 }

@@ -5,7 +5,7 @@ import factory_pattern.pizza_stores.NYStylePizzaStore;
 import factory_pattern.pizza_stores.PizzaStore;
 import factory_pattern.pizzas.Pizza;
 
-public class main {
+public class PizzaClient {
   public static void main(String[] args) {
     PizzaStore nyStore = new NYStylePizzaStore();
     PizzaStore chicagoStore = new ChicagoStylePizzaStore();

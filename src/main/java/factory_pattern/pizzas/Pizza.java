@@ -1,21 +1,19 @@
 package factory_pattern.pizzas;
 
+import factory_pattern.pizza_ingredients.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Pizza {
   String name;
-  String dough;
-  String sauce;
-  List<String> toppings = new ArrayList<>();
+  Dough dough;
+  Sauce sauce;
+  List<Veggies> veggies = new ArrayList<>();
+  Cheese cheese;
+  Pepperoni pepperoni;
 
-  public void prepare() {
-    System.out.println("Preparing " + name);
-    System.out.println("Tossing dough.. ");
-    System.out.println("Adding toppings: ");
-
-    toppings.forEach(System.out::println);
-  }
+  public abstract void prepare();
 
   public void bake() {
     System.out.println("Baking for 25 minutes at 350");
@@ -26,7 +24,11 @@ public abstract class Pizza {
   }
 
   public void box() {
-    System.out.println("Place the pizza in official Pizzastore box");
+    System.out.println("Place the pizza in official PizzaStore box");
+  }
+
+  public void setName(String name) {
+    this.name = name;
   }
 
   public String getName() {

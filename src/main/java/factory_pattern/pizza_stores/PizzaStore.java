@@ -3,6 +3,7 @@ package factory_pattern.pizza_stores;
 import factory_pattern.pizzas.Pizza;
 
 public abstract class PizzaStore {
+
   public Pizza orderPizza(String type) {
     Pizza pizza = createPizza(type);
 
